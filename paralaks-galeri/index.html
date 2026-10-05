@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paralaks galeri</title>
+<meta name="description" content="Tek bir görüntüden üretilmiş, bakış açısına göre derinlik kazanan resimler.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wall: #1f2629;
+    --ink: #e6dfd2;
+    --ink-dim: #a39c90;
+    --brass: #b8955a;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--wall); color: var(--ink); }
+  body { margin: 0; font-family: "Spectral", Georgia, "Times New Roman", serif; font-size: 18px; line-height: 1.55;
+    padding: max(48px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(64px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); }
+  .intro { max-width: 36em; margin: 0 auto 64px; }
+  h1 { font-weight: 400; font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 0 0 18px; letter-spacing: -0.01em; }
+  .intro p { color: var(--ink-dim); margin: 0 0 10px; }
+  .wall { max-width: 1200px; margin: 0 auto; display: grid; gap: 72px 56px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); align-items: end; }
+  .work { color: inherit; text-decoration: none; display: block; }
+  .frame { display: block; position: relative; box-shadow: 0 18px 40px -18px rgba(0,0,0,.8); }
+  .frame::after { content: ""; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(184,149,90,.35), inset 0 0 40px rgba(0,0,0,.45); }
+  .frame img { display: block; width: 100%; height: auto; transition: transform .5s ease; }
+  .work:hover .frame img, .work:focus-visible .frame img { transform: scale(1.015); }
+  .work:focus-visible { outline: 2px solid var(--brass); outline-offset: 8px; }
+  .label { display: block; margin-top: 16px; padding-left: 12px; border-left: 1px solid rgba(184,149,90,.5); font-size: 16px; line-height: 1.4; }
+  .label strong { display: block; font-weight: 600; }
+  .label em { color: var(--ink-dim); }
+  footer { max-width: 36em; margin: 96px auto 0; color: var(--ink-dim); font-size: 15px; }
+  footer a { color: var(--ink-dim); }
+  @media (prefers-reduced-motion: reduce) { .frame img { transition: none; } }
+</style>
+</head>
+<body>
+  <header class="intro">
+    <h1>Paralaks galeri</h1>
+    <p>Her resim tek bir görüntüden derinlik tahmini yapılarak katmanlara ayrıldı. Bir esere girip fareyi gezdir, telefonu hafifçe eğ ya da kamerayı açıp başını hareket ettir: resim pencere gibi davranır, figürlerin arkası görünür.</p>
+    
+  </header>
+  <main class="wall">
+    <a class="work" href="eserler/gece-devriyesi.html">
+      <span class="frame"><img src="kucuk/gece-devriyesi.webp" alt="Gece Devriyesi" width="900" height="732" loading="lazy"></span>
+      <span class="label"><strong>Gece Devriyesi</strong><em>Rembrandt van Rijn, 1642</em></span>
+    </a>
+  </main>
+  <footer>Arkada kalan bölgeler yapay olarak dolduruldu; kenarlarda görülen bulanıklık ve kaymalar bu yüzden.</footer>
+</body>
+</html>
